@@ -1,6 +1,6 @@
 class Point:
 
-	def __init__(self, x, y):
+	def __init__(self, x=0, y=0):
 		"""using initializer to initialize object's attributes"""
 		self.move(x, y)
 
