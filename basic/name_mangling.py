@@ -18,4 +18,5 @@ secret_string = SecertString('my_passwd', 'encrypted')
 print(secret_string.decrypt('encrypted'))
 
 # try to access privete resources in the class
-print(secret_string.__plain_string)
+#print(secret_string.__plain_string)
+print(secret_string._SecertString__plain_string)
