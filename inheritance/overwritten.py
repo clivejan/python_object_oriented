@@ -22,6 +22,13 @@ class Contact:
 class Friend(Contact):
 	# overwritten the method of superclass by using the same name
 	def __init__(self, name, email, phone):
-		self.name = name
-		self.email = email
+		# using super() to call the parent method
+		super().__init__(name, email)
 		self.phone = phone
+
+# test the overwritten and super() have worked corrently
+c = Contact('John', 'john@example.com')
+f = Friend('Jeck', 'jack@example.net', '123-456-7890')
+
+print(c.name, c.email)
+print(f.name, f.email, f.phone)
