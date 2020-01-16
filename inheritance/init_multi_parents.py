@@ -14,14 +14,18 @@ class ContactList(list):
 class Contact:
 	all_contacks = ContactList()
 
-	def __init__(self, name, email):
+	#def __init__(self, name, email):
+	def __init__(self, name="", email="", **kwargs)
+		super().__init__(**kwargs)
 		self.name = name
 		self.email = email
 		Contact.all_contacks.append(self)
 
 class AddressHoder:
 
-	def __init__(self, street, city, state, code):
+	#def __init__(self, street, city, state, code):
+	def __init__(self, street="", city="", state="", code="", **kwargs):
+		super().__init__(**kwargs)
 		self.street = street
 		self.city = city
 		self.state = state
@@ -29,8 +33,7 @@ class AddressHoder:
 
 class Friend(Contact, AddressHoder):
 
-	# initialize all parents by passing required arguments
-	def __init__(, self, name, email, phone, street, city, state, code)
-		Contact.__init__(self, name, email)
-		AddressHoder.init_(self, street, city, state, code)
+	# using keyword arguments to mitigate diamond problem
+	#def __init__(, self, name, email, phone, street, city, state, code)
+	def __init__(, self, phone="", **kwargs)
 		self.phone = phone
