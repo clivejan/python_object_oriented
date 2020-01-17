@@ -12,20 +12,26 @@ def log_calls(func):
 
 	return wrapper
 
+"""
+using @decorator syntax, instead of applying decorator after function definnition
+"""
+@log_calls
 def test1(a, b, c):
 	print("\ttest1 called")
 
+@log_calls
 def test2(a, b):
 	print("\ttest2 called")
 
+@log_calls
 def test3(a, b):
 	print("\ttest3 called")
 	time.sleep(1)
 
-# pass function to decorator and replace original one
-test1 = log_calls(test1)
-test2 = log_calls(test2)
-test3 = log_calls(test3)
+## pass function to decorator and replace original one
+#test1 = log_calls(test1)
+#test2 = log_calls(test2)
+#test3 = log_calls(test3)
 
 test1(1, 2, 3)
 test2(4, b=5)
